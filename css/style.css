@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color:sky-blue;
+    
+}
+
+.content {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(202, 45, 45, 120);
+    text-align: left;
+}
+
+.text {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.read-more-state {
+    display: none;
+}
+
+.read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.read-more-wrap {
+    overflow: hidden;
+    height: auto;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out;
+}
+
+#read-more:checked ~ .read-more-wrap {
+    max-height: 1000px; /* Adjust this value to show more or less text initially */
+}
+
+#read-more:checked + .read-more-trigger::before {
+    content: 'Read Less';
+}
+
+#read-more:not(:checked) + .read-more-trigger::before {
+    content: 'Read More';
+}
